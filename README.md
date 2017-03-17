@@ -16,8 +16,7 @@ but more simple and concise. fun with the Korat!
 $ npm install korat --save
 ```
 
-## 
-Usage
+## Usage 
 ### in React
 ```coffee
 React = require 'react'

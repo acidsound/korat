@@ -1,6 +1,6 @@
 {
   "name": "korat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate React elements without JSX",
   "main": "lib/korat",
   "scripts": {
@@ -25,7 +25,7 @@
     "createElement",
     "coffee"
   ],
-  "author": "spectrick@gmail.com",
+  "author": "spectrum <spectrick@gmail.com> (https://spectrumdig.blogspot.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/acidsound/korat/issues"
