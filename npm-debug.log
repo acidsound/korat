@@ -1,0 +1,124 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@3.10.8
+3 info using node@v6.9.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/spectrum/Documents/crossplatform/rn/libs/korat',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/spectrum/.npm/korat/1.0.56/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/spectrum/.npm correctMkdir not in flight; initializing
+10 info lifecycle korat@1.0.56~prepublish: korat@1.0.56
+11 verbose lifecycle korat@1.0.56~prepublish: unsafe-perm in lifecycle true
+12 verbose lifecycle korat@1.0.56~prepublish: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/spectrum/Documents/crossplatform/rn/libs/korat/node_modules/.bin:/Users/spectrum/Downloads/google-cloud-sdk/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/bin:/Users/spectrum/Library/Android/sdk/tools:/Users/spectrum/Library/Android/sdk/platform-tools:/Users/spectrum/Library/Android/sdk/build-tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/spectrum/Documents/db/mongodb-osx-x86_64-enterprise-3.2.9/bin
+13 verbose lifecycle korat@1.0.56~prepublish: CWD: /Users/spectrum/Documents/crossplatform/rn/libs/korat
+14 silly lifecycle korat@1.0.56~prepublish: Args: [ '-c', 'npm run compile' ]
+15 silly lifecycle korat@1.0.56~prepublish: Returned: code: 0  signal: null
+16 verbose tar pack [ '/Users/spectrum/.npm/korat/1.0.56/package.tgz',
+16 verbose tar pack   '/Users/spectrum/Documents/crossplatform/rn/libs/korat' ]
+17 verbose tarball /Users/spectrum/.npm/korat/1.0.56/package.tgz
+18 verbose folder /Users/spectrum/Documents/crossplatform/rn/libs/korat
+19 verbose addLocalTarball adding from inside cache /Users/spectrum/.npm/korat/1.0.56/package.tgz
+20 verbose correctMkdir /Users/spectrum/.npm correctMkdir not in flight; initializing
+21 silly cache afterAdd korat@1.0.56
+22 verbose afterAdd /Users/spectrum/.npm/korat/1.0.56/package/package.json not in flight; writing
+23 verbose correctMkdir /Users/spectrum/.npm correctMkdir not in flight; initializing
+24 verbose afterAdd /Users/spectrum/.npm/korat/1.0.56/package/package.json written
+25 silly publish { name: 'korat',
+25 silly publish   version: '1.0.56',
+25 silly publish   description: 'Generate React elements without JSX',
+25 silly publish   homepage: 'https://github.com/acidsound/korat',
+25 silly publish   main: './lib/korat',
+25 silly publish   scripts:
+25 silly publish    { prepublish: 'npm run compile',
+25 silly publish      compile: 'coffee --compile --output lib/ src/' },
+25 silly publish   devDependencies: { 'coffee-script': '>=1.8.0' },
+25 silly publish   dependencies: { react: '^15.4.1' },
+25 silly publish   repository:
+25 silly publish    { type: 'git',
+25 silly publish      url: 'git+https://github.com/acidsound/korat.git' },
+25 silly publish   keywords:
+25 silly publish    [ 'react',
+25 silly publish      'cjsx',
+25 silly publish      'coffeescript',
+25 silly publish      'render',
+25 silly publish      'createElement',
+25 silly publish      'coffee' ],
+25 silly publish   author:
+25 silly publish    { name: 'spectrum',
+25 silly publish      email: 'spectrick@gmail.com',
+25 silly publish      url: 'https://spectrumdig.blogspot.com' },
+25 silly publish   license: 'MIT',
+25 silly publish   bugs: { url: 'https://github.com/acidsound/korat/issues' },
+25 silly publish   readme: '# Korat\n\nTiny tool for react/react-native with pure functions. no closing tags, no braces.\n\nMade by coffeescript. but it is useful with javascript.\n\nIt\'s just a thin wrapper around [React.createElement](https://facebook.github.io/react/docs/top-level-api.html#react.createelement) like JSX.\n\nbut more simple and concise. fun with the Korat!\n[![Build Status](https://img.shields.io/travis/acidsound/korat.svg?style=flat-square)](https://travis-ci.org/acidsound/korat)\n[![NPM version](https://img.shields.io/npm/v/korat.svg?style=flat-square)](https://www.npmjs.org/package/korat)\n\n## Installation\n```\n$ npm install korat --save\n```\n\n## Usage \n### in React\n```coffee\nReact = require \'react\'\n{ Component } = React\nk = require \'korat\'\n\nclass App extends Component\n  constructor: (props)->\n    super props\n    @state =\n      newTodo: ""\n  render: ->\n    k \'div\',\n      k \'h2\', \'Todos\'\n      k \'ul\',\n        k \'li\', key: v, "#{v}. Task" for v in [0..5]\n      k NewTodo, todo: @state.newTodo\n      k \'button\',\n        onClick: (e)-> @addNewTodo\n\nclass NewTodo extends Component\n  constructor: (props)->\n    super props\n    @state =\n      todo: props.todo\n  render: ->\n    k \'div\',\n      k \'label\', \'for\': \'addTodo\', \'Add Todo\'\n      k \'input\',\n        id: \'addTodo\',\n        type: \'text\',\n        value: @props.todo\n        onChange: (e)->\n          @props.todo = e.target.value\nReactDOM.render b(App),\n  document.getElementById \'container\'\n```\n### in React-Native\n```coffee\nReact = require \'react\'\n{Component} = React\n{\n  StyleSheet\n  Text\n  View\n} = require \'react-native\'\nk = require \'korat\'\nclass App extends Component\n  render: ->\n    k View, style: styles.container,\n      k Text, "Open up main.js to start working on your app."\n      k View,\n        k Text, key:v, "#{v}number" for v in [1..5]\nstyles = StyleSheet.create\n  container:\n    flex: 1\n    backgroundColor: \'#fff\'\n    alignItems: \'center\'\n    justifyContent: \'center\'\n```\n\n## Thanks to\n\n',
+25 silly publish   readmeFilename: 'README.md',
+25 silly publish   gitHead: '1f45caf20f31ed5813bed6d0dc07030394be405f',
+25 silly publish   _id: 'korat@1.0.56',
+25 silly publish   _shasum: '69d5f4833a7100ce389c36fcaa8eaa51571db048',
+25 silly publish   _from: '.' }
+26 verbose getPublishConfig undefined
+27 silly mapToRegistry name korat
+28 silly mapToRegistry using default registry
+29 silly mapToRegistry registry https://registry.npmjs.org/
+30 silly mapToRegistry data Result {
+30 silly mapToRegistry   raw: 'korat',
+30 silly mapToRegistry   scope: null,
+30 silly mapToRegistry   escapedName: 'korat',
+30 silly mapToRegistry   name: 'korat',
+30 silly mapToRegistry   rawSpec: '',
+30 silly mapToRegistry   spec: 'latest',
+30 silly mapToRegistry   type: 'tag' }
+31 silly mapToRegistry uri https://registry.npmjs.org/korat
+32 verbose publish registryBase https://registry.npmjs.org/
+33 silly publish uploading /Users/spectrum/.npm/korat/1.0.56/package.tgz
+34 verbose request uri https://registry.npmjs.org/korat
+35 verbose request sending authorization for write operation
+36 info attempt registry request try #1 at 18:29:32
+37 verbose request using bearer token for auth
+38 verbose request id b9c660694854e2f5
+39 http request PUT https://registry.npmjs.org/korat
+40 http 403 https://registry.npmjs.org/korat
+41 verbose headers { 'content-type': 'application/json',
+41 verbose headers   'cache-control': 'max-age=300',
+41 verbose headers   'content-length': '96',
+41 verbose headers   'accept-ranges': 'bytes',
+41 verbose headers   date: 'Fri, 17 Mar 2017 09:29:33 GMT',
+41 verbose headers   via: '1.1 varnish',
+41 verbose headers   connection: 'keep-alive',
+41 verbose headers   'x-served-by': 'cache-nrt6128-NRT',
+41 verbose headers   'x-cache': 'MISS',
+41 verbose headers   'x-cache-hits': '0',
+41 verbose headers   'x-timer': 'S1489742972.685532,VS0,VE533',
+41 verbose headers   vary: 'Accept-Encoding' }
+42 verbose request invalidating /Users/spectrum/.npm/registry.npmjs.org/korat on PUT
+43 error publish Failed PUT 403
+44 verbose stack Error: "You cannot publish over the previously published version 1.0.56." : korat
+44 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+44 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+44 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+44 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:187:22)
+44 verbose stack     at emitTwo (events.js:106:13)
+44 verbose stack     at Request.emit (events.js:191:7)
+44 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1044:10)
+44 verbose stack     at emitOne (events.js:96:13)
+44 verbose stack     at Request.emit (events.js:188:7)
+44 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:965:12)
+45 verbose statusCode 403
+46 verbose pkgid korat
+47 verbose cwd /Users/spectrum/Documents/crossplatform/rn/libs/korat
+48 error Darwin 16.4.0
+49 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+50 error node v6.9.1
+51 error npm  v3.10.8
+52 error code E403
+53 error "You cannot publish over the previously published version 1.0.56." : korat
+54 error If you need help, you may report this error at:
+54 error     <https://github.com/npm/npm/issues>
+55 verbose exit [ 1, true ]
