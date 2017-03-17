@@ -1,0 +1,34 @@
+{
+  "name": "korat",
+  "version": "1.0.0",
+  "description": "Generate React elements without JSX",
+  "main": "lib/korat",
+  "scripts": {
+    "compile": "coffee --compile --output lib/ src/"
+  },
+  "devDependencies": {
+    "coffee-script": ">=1.8.0",
+    "react-dom": "^15.4.1"
+  },
+  "dependencies": {
+    "react": "^15.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acidsound/korat.git"
+  },
+  "keywords": [
+    "react",
+    "cjsx",
+    "coffeescript",
+    "render",
+    "createElement",
+    "coffee"
+  ],
+  "author": "spectrick@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/acidsound/korat/issues"
+  },
+  "homepage": "https://github.com/acidsound/korat#readme"
+}
