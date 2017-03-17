@@ -1,14 +1,23 @@
 # Korat
 
 Tiny tool for react/react-native with pure functions. no closing tags, no braces.
+
 Made by coffeescript. but it is useful with javascript.
+
 It's just a thin wrapper around [React.createElement](https://facebook.github.io/react/docs/top-level-api.html#react.createelement) like JSX.
+
 but more simple and concise. fun with the Korat!
 
 [![Build Status](http://img.shields.io/travis/hurrymaplelad/korat.svg?style=flat-square)](https://travis-ci.org/hurrymaplelad/korat)
 [![NPM version](http://img.shields.io/npm/v/korat.svg?style=flat-square)](https://www.npmjs.org/package/korat)
 
-## Usage
+## Installation
+```
+$ npm install korat --save
+```
+
+## 
+Usage
 ### in React
 ```coffee
 React = require 'react'
