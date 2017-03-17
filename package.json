@@ -1,9 +1,9 @@
 {
   "name": "korat",
-  "version": "1.0.53",
+  "version": "1.0.56",
   "description": "Generate React elements without JSX",
   "homepage": "https://github.com/acidsound/korat",
-  "main": "lib/korat",
+  "main": "./lib/korat",
   "scripts": {
     "prepublish": "npm run compile",
     "compile": "coffee --compile --output lib/ src/"
