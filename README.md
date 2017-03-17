@@ -63,13 +63,13 @@ React = require 'react'
   Text
   View
 } = require 'react-native'
-b = require './src/ceact'
+k = require 'korat'
 class App extends Component
   render: ->
-    b View, style: styles.container,
-      b Text, "Open up main.js to start working on your app."
-      b View,
-        b Text, key:v, "#{v}number" for v in [1..5]
+    k View, style: styles.container,
+      k Text, "Open up main.js to start working on your app."
+      k View,
+        k Text, key:v, "#{v}number" for v in [1..5]
 styles = StyleSheet.create
   container:
     flex: 1
