@@ -1,6 +1,6 @@
 {
   "name": "korat",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Generate React elements without JSX",
   "main": "lib/korat",
   "scripts": {
