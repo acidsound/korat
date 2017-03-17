@@ -8,7 +8,7 @@ It's just a thin wrapper around [React.createElement](https://facebook.github.io
 
 but more simple and concise. fun with the Korat!
 
-[![Build Status](http://img.shields.io/acidsound/d/korat.svg?style=flat-square)](https://travis-ci.org/hurrymaplelad/korat)
+[![Build Status](http://img.shields.io/acidsound/d/korat.svg?style=flat-square)](https://travis-ci.org/acidsound/korat)
 [![NPM version](http://img.shields.io/npm/v/korat.svg?style=flat-square)](https://www.npmjs.org/package/korat)
 
 ## Installation
