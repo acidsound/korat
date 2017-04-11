@@ -50,7 +50,7 @@ class NewTodo extends Component
         value: @props.todo
         onChange: (e)->
           @props.todo = e.target.value
-ReactDOM.render b(App),
+ReactDOM.render k(App),
   document.getElementById 'container'
 ```
 ### in React-Native
