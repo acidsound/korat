@@ -1,6 +1,6 @@
 {
   "name": "korat",
-  "version": "1.0.59",
+  "version": "1.1.5",
   "description": "Generate React elements without JSX",
   "homepage": "https://github.com/acidsound/korat",
   "main": "./lib/korat",
@@ -9,7 +9,7 @@
     "compile": "coffee --compile --output lib/ src/"
   },
   "devDependencies": {
-    "coffee-script": ">=1.8.0"
+    "coffeescript": ">=2.3.2"
   },
   "dependencies": {
     "react": "^15.4.1"
